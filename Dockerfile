@@ -16,6 +16,8 @@ ADD change_weblogic_password.sh /u01/app/oracle/middleware/
 
 ADD entrypoint.sh /u01/app/oracle/middleware/
 
+RUN [ "chmod", "a+x", "/u01/app/oracle/middleware/change_weblogic_password.sh", "/u01/app/oracle/middleware/entrypoint.sh" ]
+
 ENTRYPOINT [ "/u01/app/oracle/middleware/entrypoint.sh", "AdminServer" ]
 
 EXPOSE 7001
